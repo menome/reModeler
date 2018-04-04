@@ -1,0 +1,16 @@
+{
+  "port":3055,
+  "neo4j": {
+    "enable": true,
+    "url": "bolt://10.2.200.156",
+    "user": "neo4j",
+    "pass": "graphPaper!"
+  },
+  "rabbit": {
+    "enable": true,
+    "url": "amqp://rabbitmq:rabbitmq@10.2.200.156:5672?heartbeat=3600",
+    "routingKey": "topicmodeller.added",
+    "exchange": "topicmodeller",
+    "exchangeType": "topic"
+  }
+}
