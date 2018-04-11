@@ -10,7 +10,7 @@
     "amqplib": "^0.5.1",
     "decypher": "^0.11.0",
     "convict": "latest",
-    "@menome/botframework": "^1.1.0"
+    "@menome/botframework": "^1.1.4"
   },
   "devDependencies": {
     "mocha": "^2.5.3",

@@ -2,15 +2,12 @@
 # This image will be based on the official nodejs docker image
 FROM node:8.4.0
 
-RUN mkdir /tmp/fss
-VOLUME ["/tmp/fss"]
-
 EXPOSE 80
 ENV PORT 80
 
 # Commands will run in this directory
-RUN mkdir /srv/remodeler
-WORKDIR /srv/remodeler
+RUN mkdir /srv/app
+WORKDIR /srv/app
 
 # Add build file
 COPY ./package.json package.json
@@ -26,5 +23,4 @@ RUN rm -f .npmrc
 COPY ./app app
 COPY ./config config
 
-# CMD ["npm", "start"]
-CMD unoconv --listener; npm start
+CMD ["npm", "start"]
