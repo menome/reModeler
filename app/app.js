@@ -10,7 +10,7 @@ var config = require('./config.js');
 var harvester = require('./harvester.js');
 // We only need to do this once. Bot is a singleton.
 bot.configure({
-  name: "File Sync Service",
+  name: "Graph Remodeler",
   desc: "Updates the graph based on events from Minio",
   logging: config.get('logging'),
   port: config.get('port'),
