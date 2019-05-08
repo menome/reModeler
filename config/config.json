@@ -2,15 +2,15 @@
   "port":3055,
   "neo4j": {
     "enable": true,
-    "url": "bolt://neo4j",
+    "url": "bolt://localhost:7687",
     "user": "neo4j",
-    "pass": "graphPaper!"
+    "pass": "CodaGlenBaronyMonk"
   },
   "rabbit": {
     "enable": true,
-    "url": "amqp://rabbitmq:rabbitmq@rabbit?heartbeat=3600",
-    "routingKey": "topicmodeller.added",
-    "exchange": "topicmodeller",
+    "url": "amqp://rabbitmq:CodaGlenBaronyMonk@localhost:5672?heartbeat=3600",
+    "routingKey": "fpp.topicmodels",
+    "exchange": "fpp",
     "exchangeType": "topic"
   }
 }
