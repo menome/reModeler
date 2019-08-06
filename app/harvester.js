@@ -11,10 +11,11 @@ function fullSync(){
     bot.query(query.compile(),query.params())
     .then(function(results){
         results.records.forEach(function(element){
-            //bot.logger.info(JSON.stringify(element._fields[0]));
+            bot.logger.info(JSON.stringify(element));
             var tm = {
-                "Key":element._fields[0],
-                "EventType":"Remodel"
+                "Uuid":element._fields[0],
+                "Library":"na",
+                "Path":"na"
             }
             bot.rabbitPublish(tm);
         })
@@ -25,6 +26,6 @@ function fullSync(){
 
 function getDocumentKeysQuery(){
     var query = new Query();
-    query.match("(f:File) WHERE f.Extension IN ['pdf','doc','docx'] AND f.FullText <> '' RETURN f.Uri as Key")
+    query.match("(f) WHERE f.FullText <> '' RETURN f.Uuid as Key")
     return query;
 }
